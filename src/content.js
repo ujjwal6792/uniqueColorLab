@@ -1,5 +1,8 @@
+import birds from './assets/uniquebirds.webp'
+
 const content = {
   home: {
+    heroImage: birds,
     heroHeadding: "Welcome to Unique Color Lab",
     heroPara: "explore our range of albums, photo covers and photo frames",
     service1:["24X7 support", "get instant support for your queries and orders"],
