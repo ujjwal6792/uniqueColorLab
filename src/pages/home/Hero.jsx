@@ -3,7 +3,7 @@ import content from "../../content";
 
 const Hero = () =>
     <main className="flex flex-col min-h-full max-h-[700px] ">
-          <section className="md:w-2/3 lg:w-1/2  min-h-[70vh] flex flex-col p-2 md:pt-[10%] justify-center bg-white leading-8">
+          <section className="md:w-2/3 lg:w-1/2 flex flex-col p-2 md:pt-[10%] justify-center bg-white leading-8">
             <img
               className="w-64 mx-auto sm:ml-[18%] mb-6"
               src={content.home.heroImage}
