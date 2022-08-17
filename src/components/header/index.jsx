@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {MdOutlineMenu, MdOutlineMenuOpen, MdOutlineShoppingCart} from "react-icons/md"
+import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.webp"
 
 const styles = {
@@ -8,6 +9,8 @@ const styles = {
 
 
 const Header = () => {
+    const Navigate = useNavigate()
+
     // menu operation
     const [menuState,setMenuState] = useState(false)
     const [browserWidth, setBrowserWidth] = useState(document.body.offsetWidth)
@@ -32,13 +35,13 @@ const Header = () => {
     <div className={`flex md:h-auto md:justify-between p-4 pt-1 pb-2 md:items-center md:flex-row absolute md:relative capitalize text-xl flex-col h-screen w-screen md:w-auto justify-center gap-8 text-center items-center border-b border-black border-opacity-10 bg-white 
     ${menuState?"left-0 mt-0 md:transition-none transition-all":"-left-full mt-16 md:transition-none transition-all"}`}>
 {/* logo */}
-    <img className="object-contain cursor-pointer h-16" src={Logo} alt="Brand Logo" />
+    <img onClick={()=>Navigate("/")} className="object-contain cursor-pointer h-16" src={Logo} alt="Brand Logo" />
 {/* header buttons */}
     <ul className="flex justify-around gap-4 flex-col md:flex-row ">
-        <li className={styles.menuButtons}>home</li>
-        <li className={styles.menuButtons}>package</li>
-        <li className={styles.menuButtons}>contact</li>
-        <li className={styles.menuButtons}>about</li>
+        <li onClick={()=>Navigate("/")} className={styles.menuButtons}>home</li>
+        <li onClick={()=>Navigate("/packages")} className={styles.menuButtons}>package</li>
+        <li onClick={()=>Navigate("/contact")} className={styles.menuButtons}>contact</li>
+        <li onClick={()=>Navigate("/about")} className={styles.menuButtons}>about</li>
     </ul>
 {/* user section */}
     <div className="flex gap-4 flex-col md:flex-row items-center">
