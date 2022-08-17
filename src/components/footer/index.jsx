@@ -1,8 +1,7 @@
 
 
 const Footer = () => 
-    <div>
-        hello
+    <div className="bg-blue-dark h-48 mt-8">
     </div>
 
 export default Footer;

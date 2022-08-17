@@ -1,10 +1,10 @@
 module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        "blue-dark": "#234579",
+      },
       height: {
         "10v": "10vh",
         "20v": "20vh",
@@ -15,9 +15,9 @@ module.exports = {
         "70v": "70vh",
         "80v": "80vh",
         "90v": "90vh",
-        "100v": "100vh",  
+        "100v": "100vh",
       },
     },
   },
   plugins: [],
-}
+};
