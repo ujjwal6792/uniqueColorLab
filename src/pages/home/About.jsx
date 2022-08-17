@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import HomeButton from "../../components/buttons/HomeButton";
 import content from "../../content";
 
 const About = () => {
@@ -23,7 +24,8 @@ const About = () => {
         <p className="text-lg text-slate-700 mt-12 rounded-r-md bg-blue-50 px-4 md:px-8 py-4
         border-l-4 border-blue-dark">
         {content.home.About.para}</p>
-        <button onClick={Navigate('/about')}>Learn More</button>
+        <HomeButton function={()=>Navigate('/about')} text={"Learn More"}/>
+   
       </section>
     </div>
   );

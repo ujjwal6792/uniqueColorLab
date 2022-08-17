@@ -17,16 +17,16 @@ const Home = () => {
         {/* hero section */}
         <Hero />
         {/* tagline section */}
-        <h1 className="text-blue-dark text-2xl md:text-5xl mb-8 md:w-1/2"
+        <h1 className="text-blue-dark text-2xl md:text-5xl m mb-8 mt-20 md:w-1/2"
         >Why people choose our services</h1>
         {/* cards section */}
         <ServiceCards />
         {/* About Us */}
-        <section>
+        <section className="mt-20">
           <About/>
         </section>
         {/* Business Insights */}
-        <section className="pt-16 pb-16 pl-4 pr-4 lg:pl-6 lg:pr-6 mt-8 bg-gradient-to-r to-sky-500 from-blue-dark via-blue-900">
+        <section className="mt-20 pt-16 pb-16 pl-4 pr-4 lg:pl-6 lg:pr-6 bg-gradient-to-r to-sky-500 from-blue-dark via-blue-900">
           <Insights/>
         </section>
       </div>
