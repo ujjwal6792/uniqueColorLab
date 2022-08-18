@@ -1,5 +1,6 @@
 import React from "react";
 import About from "./About";
+import Blog from "./Blog";
 import Hero from "./Hero";
 import Insights from "./Insights";
 import ServiceCards from "./ServiceCards";
@@ -28,6 +29,10 @@ const Home = () => {
         {/* Business Insights */}
         <section className="mt-6 md:mt-20 pt-16 pb-16 pl-4 pr-4 lg:pl-6 lg:pr-6 bg-gradient-to-r to-sky-500 from-blue-dark via-blue-900">
           <Insights/>
+        </section>
+        {/* Blogs */}
+        <section className="mt-6 md:mt-20 pt-16 pb-16 pl-4 pr-4 lg:pl-6 lg:pr-6">
+          <Blog/>
         </section>
       </div>
     </>
