@@ -55,32 +55,41 @@ const content = {
       img: "",
     },
   },
-  Blog:[
-    { 
-      id:1,
+  Blog: [
+    {
+      id: 1,
       img: "https://firebasestorage.googleapis.com/v0/b/uniquecolorlabshop.appspot.com/o/blog%2Fpexels-alexander-dummer-134469.webp?alt=media&token=887e182a-4e9b-4ac4-ac07-c34f27858143",
       heading: "Art of photography",
-      description: "A look into the world of professional photography and how phones are transforming the space. "
-    }, 
+      description:
+        "A look into the world of professional photography and how phones are transforming the space. ",
+    },
     {
       id: 2,
       img: "https://firebasestorage.googleapis.com/v0/b/uniquecolorlabshop.appspot.com/o/blog%2Fpexels-viresh-studio-1444442.webp?alt=media&token=3b32ce62-f870-40e1-8776-930053af7758",
       heading: "Wedding shoots and how to design them",
-      description: "Discussing the art of wedding photography and in depth analysis of modern trends. "
+      description:
+        "Discussing the art of wedding photography and in depth analysis of modern trends. ",
     },
-    { 
-      id:3,
+    {
+      id: 3,
       img: "https://firebasestorage.googleapis.com/v0/b/uniquecolorlabshop.appspot.com/o/blog%2Fpexels-karolina-grabowska-4397899.webp?alt=media&token=9e253084-91b9-4bff-8f4c-5e28fe5b57f6",
       heading: "The beginner's guide to Professional Photography Equipment",
-      description: "Today we will look into pro cameras and lenses a beginner can go for. "
+      description:
+        "Today we will look into pro cameras and lenses a beginner can go for. ",
     },
-    { 
-      id:4,
+    {
+      id: 4,
       img: "https://firebasestorage.googleapis.com/v0/b/uniquecolorlabshop.appspot.com/o/blog%2Fpexels-alexander-dummer-134469.webp?alt=media&token=887e182a-4e9b-4ac4-ac07-c34f27858143",
       heading: "Art of photography",
-      description: "A look into the world of professional photography and how phones are transforming the space. "
+      description:
+        "A look into the world of professional photography and how phones are transforming the space. ",
     },
-  ]
+  ],
+  contact: [
+    { heading: "Location", text: "Charbagh, Lucknow" },
+    { heading: "email", text: "Tilakphotos@gmail.com" },
+    { heading: "phone", text: "9999999999" },
+  ],
 };
 
 export default content;
