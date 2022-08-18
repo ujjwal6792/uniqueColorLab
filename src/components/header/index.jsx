@@ -25,7 +25,7 @@ const Header = () => {
         browserWidth<=768?setMenuState(false):setMenuState(true)
     },[browserWidth])
     // jsx
-    return <div className=' drop-shadow mt-0 fixed w-full xl:w-[1280px]'>
+    return <div className='z-50 drop-shadow mt-0 fixed w-full xl:w-[1280px]'>
 {/* Hamburger menu */}
     <div className="md:hidden absolute top-6 left-6 scale-150 z-50"
     onClick={()=>setMenuState(!menuState)}>

@@ -6,8 +6,8 @@ import { FaFacebookSquare,FaInstagram, FaTwitterSquare } from "react-icons/fa";
 const Footer = () => {
   const year = new Date().toString().slice(10, 16);
   return (
-    <div className="hidden md:grid grid-cols-4 mt-8 text-blue-dark shadow-lg'
-    min-h-[400px] ">
+    <div className="hidden md:grid grid-cols-4 text-blue-dark shadow-lg'
+    min-h-[400px] bg-gradient-to-b from-[#ffffff] to-[#ECE9E650] ">
       {/* left */}
       <section className="flex flex-col justify-between px-4 pt-8 pb-8">
          <h1 className="font-semibold border-l-2 border-blue-dark px-2 text-lg text-blue-dark">
@@ -55,6 +55,7 @@ const Footer = () => {
           <input
             className="border-2 text-lg py-1 px-2 border-blue-dark rounded-l-md border-r-0 focus:outline-0 text-blue-dark shadow "
             type="email"
+            placeholder="Email"
           />
           <HomeButton
             style={"rounded-r-md px-2 py-1 text-blue-dark border-2"}
