@@ -90,6 +90,11 @@ const content = {
     { heading: "email", text: "Tilakphotos@gmail.com" },
     { heading: "phone", text: "9999999999" },
   ],
+  services:[
+    {heading:"Printing Service", text:"Affordable pricing on world class printing services",img:""},
+    {heading:"Framing Service", text:"Acryllic and laminated frames with a glass finish and hightened durability",img:""},
+    {heading:"Albums", text:"Bring your memories right in your palm with storybooks and wide variety of albums",img:""},
+  ]
 };
 
 export default content;

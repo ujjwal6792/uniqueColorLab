@@ -46,7 +46,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="md:pt-24 flex flex-col">
+    <div className=" md:pt-24 flex flex-col">
       <section className="flex flex-col w-full justify-center items-center">
         <p className="text-7xl w-full flex items-center justify-center h-80 text-blue-dark shadow mb-10 md:mb-20 z-10">
           Contact Us
@@ -65,7 +65,7 @@ const Contact = () => {
           highlight={content.contact[0].heading}
           imgClass="hidden"
           cardClass="w-[33%] min-h-[250px] min-w-[220px] max-w-[320px]"
-          button="hidden"
+          buttonClass="hidden"
         >
           <GoLocation className="text-5xl text-blue-dark" />
         </Cardsquare>
@@ -74,7 +74,7 @@ const Contact = () => {
           highlight={content.contact[1].heading}
           imgClass="hidden"
           cardClass="w-[33%] min-h-[250px] min-w-[220px] max-w-[320px]"
-          button="hidden"
+          buttonClass="hidden"
         >
           <GoMail className="text-5xl text-blue-dark" />
         </Cardsquare>
@@ -83,7 +83,7 @@ const Contact = () => {
           highlight={content.contact[2].heading}
           imgClass="hidden"
           cardClass="w-[33%] min-h-[250px] min-w-[220px] max-w-[320px]"
-          button="hidden"
+          buttonClass="hidden"
         >
           <GoDeviceMobile className="text-5xl text-blue-dark" />
         </Cardsquare>

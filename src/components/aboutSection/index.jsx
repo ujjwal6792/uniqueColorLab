@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import HomeButton from "../../components/buttons/HomeButton";
+import HomeButton from "../buttons/HomeButton";
 import content from "../../content";
 
-const About = () => {
+const AboutSection = (props) => {
 
     const Navigate= useNavigate()
                 
   return (
-    <div className="grid mt-8 grid-cols-1 sm:grid-cols-2 items-center justify-center">
+    <div className={`grid grid-cols-1 sm:grid-cols-2 items-center justify-center ${props.mainClass}`}>
       {/* left */}
       <section className="relative p-4">
         <img className="aspect-square w-11/12 sm:w-11/12  rounded-md
@@ -31,4 +31,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutSection;

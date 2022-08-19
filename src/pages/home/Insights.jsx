@@ -16,7 +16,7 @@ const Insights = () => {
               text={item.text}
               highlight={item.highlight}
               cardClass = {"h-52 w-52"}
-              button={"hidden"}
+              buttonClass={"hidden"}
             />
           );
         })}

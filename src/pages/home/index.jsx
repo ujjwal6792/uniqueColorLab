@@ -1,5 +1,5 @@
 import React from "react";
-import About from "./About";
+import About from "../../components/aboutSection";
 import Blog from "./Blog";
 import Hero from "./Hero";
 import Insights from "./Insights";
@@ -14,7 +14,7 @@ const styles = {
 const Home = () => {
   return (
     <>
-      <div className="w-full flex flex-col min-h-fit md:pt-12">
+      <div className="w-full flex flex-col min-h-fit pt-20 md:pt-12">
         {/* hero section */}
         <Hero />
         {/* tagline section */}
