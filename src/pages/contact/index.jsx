@@ -94,7 +94,7 @@ const Contact = () => {
           src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         />
       </section>
-      <div className="grid grid-cols-1 md:grid-cols-2 -mt-96 z-10 justify-between items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 -mt-96 z-10 justify-between items-center mb-10 md:mb-20">
         {/* contact form */}
 
         <section className="bg-white shadow-md justify-center items-center h-full w-[80%] px-8 mx-auto py-8 rounded-md">
@@ -162,6 +162,7 @@ const Contact = () => {
           </section>
         </div>
       </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.183399686237!2d80.92247291500554!3d26.834118469929177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfc4b30113dd7%3A0x3bec3039de49d58e!2sUnique%20Color%20Lab!5e0!3m2!1sen!2sin!4v1660887335229!5m2!1sen!2sin" width="100%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   );
 };
