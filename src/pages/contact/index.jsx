@@ -79,7 +79,7 @@ const Contact = () => {
           <GoMail className="text-5xl text-blue-dark" />
         </Cardsquare>
         <Cardsquare
-          text={`+91 r- ${content.contact[2].text}`}
+          text={`+91 - ${content.contact[2].text}`}
           highlight={content.contact[2].heading}
           imgClass="hidden"
           cardClass="w-[33%] min-h-[250px] min-w-[220px] max-w-[320px]"
