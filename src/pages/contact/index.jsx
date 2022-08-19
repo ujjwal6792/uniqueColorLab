@@ -48,7 +48,7 @@ const Contact = () => {
   return (
     <div className=" md:pt-24 flex flex-col">
       <section className="flex flex-col w-full justify-center items-center">
-        <p className="text-7xl w-full flex items-center justify-center h-80 text-blue-dark shadow mb-10 md:mb-20 z-10">
+        <p className="text-7xl w-full flex items-center justify-center h-96 sm:h-[30rem] md:h-80 text-blue-dark md:shadow mb-10 md:mb-20 z-10">
           Contact Us
         </p>
         <FiPhoneCall className="text-blue-dark text-xl drop-shadow-md mb-2" />
@@ -90,11 +90,11 @@ const Contact = () => {
       </section>
       <section className="h-[100vh] object-cover w-full z-0 -mt-32">
         <img
-          className=""
+          className="md:relative absolute top-20"
           src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         />
       </section>
-      <div className="grid grid-cols-1 md:grid-cols-2 -mt-96 z-10 justify-between items-center mb-10 md:mb-20">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 -mt-[46rem] md:-mt-96 z-10 justify-between items-center mb-10 md:mb-20">
         {/* contact form */}
 
         <section className="bg-white shadow-md justify-center items-center h-full w-[80%] px-8 mx-auto py-8 rounded-md">
