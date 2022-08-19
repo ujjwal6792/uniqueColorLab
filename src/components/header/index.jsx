@@ -43,13 +43,12 @@ const Header = () => {
       >
         {menuState ? (
           <div className="flex items-center justify-between w-[100vw]  px-6 bg-white">
-            <MdOutlineMenuOpen className="text-5xl pb-2 pt-4 box-content" />
-            <p className="text-3xl text-blue-dark">Unique Color Lab</p>
+            <MdOutlineMenuOpen className="text-blue-dark text-5xl pb-2 pt-4 box-content" />
           </div>
         ) : (
           <div className="flex items-center justify-between w-[100vw] px-6 bg-white">
-            <MdOutlineMenu className="text-5xl pb-2 pt-4 box-content" />
-            <p className="text-3xl text-blue-dark">Unique Color Lab</p>
+            <MdOutlineMenu className="text-blue-dark text-5xl pb-2 pt-4 box-content" />
+            <p className="text-3xl text-blue-dark pt-3">Unique Color Lab</p>
           </div>
         )}
       </div>
