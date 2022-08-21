@@ -1,6 +1,8 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import { getStorage } from "firebase/storage"; 
+
 const firebaseConfig = {
   apiKey: "AIzaSyBQ1iu0nzbu04OjYMDVy3xnxySzqiHZOJY",
   authDomain: "uniquecolorlabshop.firebaseapp.com",
@@ -11,6 +13,11 @@ const firebaseConfig = {
   measurementId: "G-6Q607TGC6M"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
+const storage = getStorage(firebaseApp);
+
+export { db, auth,storage };
+export default firebase;
