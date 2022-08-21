@@ -17,6 +17,7 @@ function App() {
     <Header/>
     <React.Suspense fallback={<>...loading</>}>
    <Routes>
+   <Route path="/dashboard" element={<Dashboard/>}/>
    <Route path="/change_password" element={<PasswordRecovery/>}/>
    <Route path="/register" element={<Register/>}/>
    <Route path="/login" element={<Login/>}/>

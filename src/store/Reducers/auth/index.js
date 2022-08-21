@@ -1,16 +1,13 @@
 import * as Auth from "./types";
 
 const initialAuth={
-  uid: JSON.parse(localStorage.getItem('auth'))?.uid || {
-    uid: null,
-  },
-  user: JSON.parse(localStorage.getItem('auth'))?.user || {
+  uid: (localStorage.getItem('uid')) ||null,
+  user: JSON.parse(localStorage.getItem('user')) || {
     user: null,
   },
-  isLoggedIn: JSON.parse(localStorage.getItem('auth'))?.isLoggedIn || false,
+  isLoggedIn:(localStorage.getItem('isLoggedIn')) || false,
   isRegistered: false
 }
-
 const initial_auth_state = {
   ...initialAuth
 
@@ -21,12 +18,12 @@ const AuthState = (state = initial_auth_state, { type, payload }) => {
     case Auth.SET_LOGIN:
       return {
         ...state,
-        todos: [...payload],
+        uid: payload,
       };
-    case Auth.SET_LOGOUT:
+    case Auth.SET_LOGIN_STATE:
       return {
         ...state,
-        todoLoading: payload,
+        isLoggedIn: payload,
       };
     case Auth.SET_REGISTER:
       return {

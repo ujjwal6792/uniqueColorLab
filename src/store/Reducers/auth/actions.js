@@ -28,14 +28,22 @@ export const RegisterReset = (value) => (dispatch) => {
 };
 
 export const LoginState = (values) => (dispatch) => {
+
+  const user ={}
   auth
   .signInWithEmailAndPassword(values.email, values.password)
   .then((auth) => {
-    navigate("/account");
+    dispatch({
+      type: Auth.SET_LOGIN,
+      payload: auth.user.uid,
+    })
+    dispatch({
+      type:Auth.SET_LOGIN_STATE,
+      payload: true
+    })
+    localStorage.setItem("uid", auth.user.uid)
+    localStorage.setItem("isLoggedIn", true)
   })
   .catch((error) => alert(error.message));
-  dispatch({
-    type: Auth.SET_LOGIN,
-    payload: value,
-  });
+
 };
