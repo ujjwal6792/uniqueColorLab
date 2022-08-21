@@ -95,7 +95,7 @@ const Header = () => {
         {/* user section */}
         <div className="flex gap-4 flex-col md:flex-row items-center">
           <img
-            onClick={()=> Navigate("/login")}
+            onClick={()=> headerMenu("/login")}
             className="cursor-pointer rounded-full h-14 w-14 md:h-12 md:w-12 border-2 border-black"
             src="https://img.icons8.com/laces/64/000000/experimental-user-laces.png"
             alt="user image icon"
