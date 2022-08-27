@@ -97,7 +97,7 @@ const Header = () => {
           <img
             onClick={()=> headerMenu("/login")}
             className="cursor-pointer rounded-full h-14 w-14 md:h-12 md:w-12 border-2 border-black"
-            src="https://img.icons8.com/laces/64/000000/experimental-user-laces.png"
+            src="https://img.icons8.com/laces/64/000000/user.png"
             alt="user image icon"
           />
           <p className="cursor-pointer">user</p>

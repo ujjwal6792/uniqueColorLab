@@ -17,7 +17,7 @@ const Login = () => {
   });
 
   return (<>
-  {isLoggedIn === true && Navigate("/dashboard")}
+  {isLoggedIn === true && console.log(isLoggedIn) && Navigate("/dashboard")}
     <Formik
       initialValues={{
         email: "",

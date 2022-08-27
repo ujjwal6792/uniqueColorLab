@@ -2,7 +2,8 @@ import React, {lazy} from 'react'
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/header"
 import Footer from "./components/footer"
-
+import PageTransition from './components/loader/PageTransition';
+import ScrollToTop from "./utils/ScrollToTop"
 const Dashboard = lazy(()=> import("./pages/dashboard"))
 const Home = lazy(()=> import("./pages/home"))
 const About = lazy(()=> import("./pages/About"))
@@ -15,7 +16,8 @@ function App() {
 
   return (<>
     <Header/>
-    <React.Suspense fallback={<>...loading</>}>
+    <ScrollToTop/>
+    <React.Suspense fallback={<PageTransition/>}>
    <Routes>
    <Route path="/dashboard" element={<Dashboard/>}/>
    <Route path="/change_password" element={<PasswordRecovery/>}/>
