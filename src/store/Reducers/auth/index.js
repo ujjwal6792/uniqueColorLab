@@ -25,6 +25,13 @@ const AuthState = (state = initial_auth_state, { type, payload }) => {
         ...state,
         isLoggedIn: payload,
       };
+      case Auth.SET_LOGOUT:
+        return {
+          ...state,
+          isLoggedIn: payload,
+          uid:null,
+          user:null,
+        };
     case Auth.SET_REGISTER:
       return {
         ...state,

@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 import AuthState from "./auth";
-import TodoReducer from "./Todos";
+import InteractionTypes from "./interactions";
 
 const rootReducer = combineReducers({
-  todos: TodoReducer,
+  interactions: InteractionTypes,
   auth: AuthState,
 });
 

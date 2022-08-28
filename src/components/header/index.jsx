@@ -4,8 +4,12 @@ import {
   MdOutlineMenuOpen,
   MdOutlineShoppingCart,
 } from "react-icons/md";
+
+import { useSelector, useDispatch } from "react-redux";
+import { LogOut } from "../../store/Reducers/auth/actions";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.webp";
+import UserCard from "../cards/userCard";
 
 const styles = {
   menuButtons:
@@ -14,7 +18,8 @@ const styles = {
 
 const Header = () => {
   const Navigate = useNavigate();
-
+  const dispatch = useDispatch();
+  const { user, isLoggedIn } = useSelector((state) => state.auth);
   // menu operation
   const [menuState, setMenuState] = useState(false);
   const [browserWidth, setBrowserWidth] = useState(document.body.offsetWidth);
@@ -95,13 +100,20 @@ const Header = () => {
         {/* user section */}
         <div className="flex gap-4 flex-col md:flex-row items-center">
           <img
-            onClick={()=> headerMenu("/login")}
+            onClick={() => isLoggedIn?"": headerMenu("/login")}
             className="cursor-pointer rounded-full h-14 w-14 md:h-12 md:w-12 border-2 border-black"
             src="https://img.icons8.com/laces/64/000000/user.png"
             alt="user image icon"
           />
-          <p className="cursor-pointer">user</p>
-          <span onClick={()=>{headerMenu("/cart")}} className="cursor-pointer flex items-center gap-1">
+          <p onClick={() => isLoggedIn?"":headerMenu("/login")} className="cursor-pointer">
+            {isLoggedIn? `Hi, ${user?.firstname}`: "Hi, Guest"}
+          </p>
+          <span
+            onClick={() => {
+              headerMenu("/cart");
+            }}
+            className="cursor-pointer flex items-center gap-1"
+          >
             <MdOutlineShoppingCart /> {`${0}`}
           </span>
         </div>
