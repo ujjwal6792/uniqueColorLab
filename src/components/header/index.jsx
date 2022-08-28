@@ -9,7 +9,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { LogOut } from "../../store/Reducers/auth/actions";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.webp";
-import UserCard from "../cards/userCard";
+import UserCard from "../cards/UserCard";
+import { Modal } from "../../store/Reducers/interactions/actions";
 
 const styles = {
   menuButtons:
@@ -20,6 +21,7 @@ const Header = () => {
   const Navigate = useNavigate();
   const dispatch = useDispatch();
   const { user, isLoggedIn } = useSelector((state) => state.auth);
+  const { modal } = useSelector((state) => state.interactions);
   // menu operation
   const [menuState, setMenuState] = useState(false);
   const [browserWidth, setBrowserWidth] = useState(document.body.offsetWidth);
@@ -38,6 +40,10 @@ const Header = () => {
     Navigate(nav);
     browserWidth <= 768 ? setMenuState(false) : setMenuState(true);
   };
+
+  const modalToggle=()=>{
+    dispatch(Modal(!modal))
+  }
   // jsx
   return (
     <div className="z-50 drop-shadow mt-0 fixed w-full xl:w-[1280px]">
@@ -100,12 +106,12 @@ const Header = () => {
         {/* user section */}
         <div className="flex gap-4 flex-col md:flex-row items-center">
           <img
-            onClick={() => isLoggedIn?"": headerMenu("/login")}
+            onClick={() => isLoggedIn?modalToggle(): headerMenu("/login")}
             className="cursor-pointer rounded-full h-14 w-14 md:h-12 md:w-12 border-2 border-black"
             src="https://img.icons8.com/laces/64/000000/user.png"
             alt="user image icon"
           />
-          <p onClick={() => isLoggedIn?"":headerMenu("/login")} className="cursor-pointer">
+          <p onClick={() => isLoggedIn?modalToggle():headerMenu("/login")} className="cursor-pointer">
             {isLoggedIn? `Hi, ${user?.firstname}`: "Hi, Guest"}
           </p>
           <span
@@ -118,6 +124,7 @@ const Header = () => {
           </span>
         </div>
       </div>
+     {isLoggedIn && <UserCard style="absolute top-20 right-16 p-8 rounded-md w-[320px]"/>}
     </div>
   );
 };

@@ -1,17 +1,26 @@
-import React from 'react'
-import {useSelector} from 'react-redux'
+import {createPortal} from 'react-dom'
+import {useSelector, useDispatch} from 'react-redux'
+import HomeButton from '../buttons/HomeButton'
+import { LogOut } from '../../store/Reducers/auth/actions'
 
 const UserCard = (props) => {
-  const { user, isLoggedIn } = useSelector((state) => state.auth);
- 
-  return (<>
-    { isLoggedIn==true? 
-    <div className={`w-[320px] flex flex-col absolute shadow-md border border-blue-dark top-24 right-11 ${props.style}`}>
-     <p> Name: <span>{`${user.firstname} ${user.lastname}`}</span></p>
+  const dispatch = useDispatch()
+  const { user } = useSelector((state) => state.auth);
+  const { modal } = useSelector((state) => state.interactions);
+  
+  if (modal===true) return createPortal(<>
+    <div className={` flex flex-col shadow-md items-center gap-4 text-blue-dark z-[1000] text-xl ${props.style}`}>
+     <p className='capitalize'><span>{`${user?.firstname} ${user?.surname}`}</span></p>
+     <p>{user?.email}</p>
+     <HomeButton text="Logout" style="rounded-md text-xl font-semibold"
+     function={()=>{ 
+        dispatch(LogOut())
+        
+     }}/>
     </div>
-     :""}
-     {console.log('help me')}
-     </>)
+     {console.log(user)}
+     </>,
+     document.getElementById("modal"))
 }
 
 export default UserCard

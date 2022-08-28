@@ -5,7 +5,7 @@ const initialAuth={
   user: JSON.parse(localStorage.getItem('user')) || {
     user: null,
   },
-  isLoggedIn:(localStorage.getItem('isLoggedIn')) || false,
+  isLoggedIn:JSON.parse(localStorage.getItem('isLoggedIn')) || false,
   isRegistered: false
 }
 const initial_auth_state = {
