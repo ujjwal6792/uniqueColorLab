@@ -35,6 +35,11 @@ const AuthState = (state = initial_auth_state, { type, payload }) => {
           ...state,
           isRegistered:payload,
         };
+      case Auth.SET_USER:
+      return {
+        ...state,
+        user: payload
+      }
     default:
       return state;
   }

@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
-import { useSelector, useDispatch, connect } from "react-redux";
-import { LoginState, } from "../../store/Reducers/auth/actions";
+import { useSelector, useDispatch } from "react-redux";
+import { LoginState } from "../../store/Reducers/auth/actions";
 import TextFieldBase from "../../components/textFields/TextFieldBase";
 import HomeButton from "../../components/buttons/HomeButton";
 
 const Login = () => {
-  const {uid, isLoggedIn}  = useSelector((state) => state.auth);
+  const {isLoggedIn}  = useSelector((state) => state.auth);
   const Navigate = useNavigate();
   const dispatch = useDispatch();
   const validate = Yup.object({
@@ -17,7 +17,7 @@ const Login = () => {
   });
 
   return (<>
-  {isLoggedIn === true && console.log(isLoggedIn) && Navigate("/dashboard")}
+  {isLoggedIn === true && Navigate("/dashboard")}
     <Formik
       initialValues={{
         email: "",

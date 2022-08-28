@@ -11,6 +11,8 @@ const Login = lazy(()=> import("./pages/credentials/Login"))
 const Register = lazy(()=> import("./pages/credentials/Register"))
 const PasswordRecovery = lazy(()=> import("./pages/credentials/PasswordRecovery"))
 const Contact = lazy(()=> import("./pages/contact"))
+const Cart = lazy(()=> import("./pages/cart"))
+
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
     <ScrollToTop/>
     <React.Suspense fallback={<PageTransition/>}>
    <Routes>
+   <Route path="/products" element={<div className='pt-20'>coming</div>}/>
+   <Route path="/cart" element={<Cart/>}/>
    <Route path="/dashboard" element={<Dashboard/>}/>
    <Route path="/change_password" element={<PasswordRecovery/>}/>
    <Route path="/register" element={<Register/>}/>

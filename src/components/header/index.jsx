@@ -101,7 +101,7 @@ const Header = () => {
             alt="user image icon"
           />
           <p className="cursor-pointer">user</p>
-          <span className="cursor-pointer flex items-center gap-1">
+          <span onClick={()=>{headerMenu("/cart")}} className="cursor-pointer flex items-center gap-1">
             <MdOutlineShoppingCart /> {`${0}`}
           </span>
         </div>

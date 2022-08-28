@@ -1,4 +1,5 @@
 export const SET_AUTH = "SET_AUTH";
+export const SET_USER = "SET_USER";
 export const SET_LOGIN = "SET_LOGIN";
 export const SET_LOGIN_STATE = "SET_LOGIN_STATE";
 export const SET_LOGOUT = "SET_LOGOUT";
