@@ -6,3 +6,4 @@ export const SET_LOGOUT = "SET_LOGOUT";
 export const SET_REGISTER = "SET_REGISTER";
 export const SET_CHANGEPASSWORD = "SET_CHANGEPASSWORD";
 export const SET_REGISTER_RESET = "SET_REGISTER_RESET";
+export const SET_ERROR = "SET_ERROR"

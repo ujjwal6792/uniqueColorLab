@@ -18,7 +18,6 @@ const UserCard = (props) => {
         
      }}/>
     </div>
-     {console.log(user)}
      </>,
      document.getElementById("modal"))
 }

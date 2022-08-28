@@ -6,7 +6,8 @@ const initialAuth={
     user: null,
   },
   isLoggedIn:JSON.parse(localStorage.getItem('isLoggedIn')) || false,
-  isRegistered: false
+  isRegistered: false,
+  error: null,
 }
 const initial_auth_state = {
   ...initialAuth
@@ -47,6 +48,11 @@ const AuthState = (state = initial_auth_state, { type, payload }) => {
         ...state,
         user: payload
       }
+      case Auth.SET_ERROR:
+        return{
+          ...state,
+          error: payload
+        }
     default:
       return state;
   }

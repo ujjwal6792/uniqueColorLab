@@ -16,7 +16,12 @@ export const RegisterState = (values) => (dispatch) => {
           surname: values.lastName,
           email: values.email,
         });
-      });
+      }).catch((error)=> dispatch(
+        {
+          type: Auth.SET_ERROR,
+          payload: error,
+        }
+      ));
   }
 };
 
@@ -55,7 +60,12 @@ export const LoginState = (values) => (dispatch) => {
             payload: { ...doc.data(), id: doc.id },
           });
         })
-        .catch((error) => alert(error.message));
+        .catch((error) => dispatch(
+          {
+            type: Auth.SET_ERROR,
+            payload: error,
+          }
+        ) );
     });
 };
 
@@ -70,5 +80,10 @@ export const LogOut = () => (dispatch) => {
       payload: false,
     });
   })
-  .catch((err)=>console.log(err));
+  .catch((error)=>dispatch(
+    {
+      type: Auth.SET_ERROR,
+      payload: error,
+    }
+  ) );
 };

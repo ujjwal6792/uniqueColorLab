@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
 import { Form, Formik } from "formik";
-import { useSelector, useDispatch, connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RegisterState, RegisterReset } from "../../store/Reducers/auth/actions";
 import * as Yup from "yup";
 import TextFieldBase from "../../components/textFields/TextFieldBase";
 import HomeButton from "../../components/buttons/HomeButton";
 import { useNavigate } from "react-router-dom";
+import ErrorCard from "../../components/cards/ErrorCard";
 
 const Register = () => {
   const Navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isRegistered } = useSelector((state) => state.auth);
+  const { isRegistered, error } = useSelector((state) => state.auth);
 
   const validate = Yup.object({
     firstName: Yup.string()
@@ -104,6 +104,7 @@ const Register = () => {
           </div>
         )}
       </Formik>
+      <ErrorCard error={error}/>
     </>
   );
 };
