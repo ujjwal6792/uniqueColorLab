@@ -60,13 +60,13 @@ export const LoginState = (values) => (dispatch) => {
             payload: { ...doc.data(), id: doc.id },
           });
         })
-        .catch((error) => dispatch(
-          {
-            type: Auth.SET_ERROR,
-            payload: error,
-          }
-        ) );
-    });
+        
+    }).catch((error) => dispatch(
+      {
+        type: Auth.SET_ERROR,
+        payload: error,
+      }
+    ) );
 };
 
 export const LogOut = () => (dispatch) => {
@@ -87,3 +87,12 @@ export const LogOut = () => (dispatch) => {
     }
   ) );
 };
+
+export const Error = (error) => (dispatch) =>{ 
+  dispatch(
+    {
+      type: Auth.SET_ERROR,
+      payload: error,
+    }
+  )
+}

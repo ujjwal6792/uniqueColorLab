@@ -6,9 +6,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { LoginState } from "../../store/Reducers/auth/actions";
 import TextFieldBase from "../../components/textFields/TextFieldBase";
 import HomeButton from "../../components/buttons/HomeButton";
+import ErrorCard from "../../components/cards/ErrorCard";
 
 const Login = () => {
-  const {isLoggedIn}  = useSelector((state) => state.auth);
+  const {isLoggedIn, error}  = useSelector((state) => state.auth);
   const Navigate = useNavigate();
   const dispatch = useDispatch();
   const validate = Yup.object({
@@ -62,6 +63,7 @@ const Login = () => {
         </Form>
       </div>
     </Formik>
+    {error===null || <ErrorCard error={error}/>}
     </>);
 };
 

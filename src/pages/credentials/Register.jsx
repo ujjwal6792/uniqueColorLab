@@ -104,7 +104,7 @@ const Register = () => {
           </div>
         )}
       </Formik>
-      <ErrorCard error={error}/>
+      {error===null || <ErrorCard error={error}/>}
     </>
   );
 };
