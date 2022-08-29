@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { LogOut } from "../../store/Reducers/auth/actions";
 import { IoMdLogOut, IoMdHelpCircleOutline,IoMdCard, IoMdContact } from "react-icons/io";
+import PersonalDetails from "./pages/PersonalDetails";
 
 const Dashboard = () => {
   const Navigate = useNavigate();
@@ -130,19 +131,18 @@ const Dashboard = () => {
               </div>
             </section>
 
-            <section className="grid grid-cols-9 items-center gap-8 shadow-md p-2 bg-blue-dark cursor-pointer hover:bg-red-600 hover:transition-colors">
+            <section onClick={() => logOut()} className="grid grid-cols-9 items-center gap-8 shadow-md p-2 bg-blue-dark cursor-pointer hover:bg-red-600 hover:transition-colors">
               <IoMdLogOut className="text-white text-xl" />
-              <button
-                onClick={() => logOut()}
-                className=" text-xl text-white font-semibold text-opacity-95"
-              >
+              <p className=" text-xl text-white font-semibold text-opacity-95">
                 Logout
-              </button>
+              </p>
             </section>
           </div>
 
           <div className="col-span-9 p-4 h-full ">
-            <section className="h-full shadow-md"> {selectedOption} </section>
+            <section className="h-full shadow-md p-8">
+               {selectedOption==="Personal Details" && <PersonalDetails/> } 
+            </section>
           </div>
         </div>
       ) : (
