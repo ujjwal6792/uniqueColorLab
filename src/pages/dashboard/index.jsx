@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { LogOut } from "../../store/Reducers/auth/actions";
+import { IoMdLogOut, IoMdHelpCircleOutline,IoMdCard, IoMdContact } from "react-icons/io";
 
 const Dashboard = () => {
   const Navigate = useNavigate();
@@ -14,15 +15,14 @@ const Dashboard = () => {
   };
   const selectOption = (e) => {
     setSelectedOption(e.target.innerText);
-    e.target.classList.add("bg-blue-200")
-    document.querySelectorAll('.cursor-pointer').forEach(element => {
-      if(element.innerText === e.target.innerText){
-        element.classList.add("bg-blue-200")
+    e.target.classList.add("bg-blue-200");
+    document.querySelectorAll(".cursor-pointer").forEach((element) => {
+      if (element.innerText === e.target.innerText) {
+        element.classList.add("bg-blue-200");
+      } else {
+        element.classList.remove("bg-blue-200");
       }
-      else { 
-        element.classList.remove("bg-blue-200")
-      }
-    })
+    });
   };
 
   return (
@@ -47,63 +47,94 @@ const Dashboard = () => {
               <p className="text-xl px-2 pb-2 border-b-2 w-full font-semibold">
                 My Orders
               </p>
-              <p className="text-xl px-2 pb-2 w-full font-semibold">
-                Account Details
+              <div className="text-xl px-2 pb-2 w-full font-semibold">
+              <p className="grid grid-cols-9 items-center gap-8">
+                  <IoMdContact className="text-2xl" /> <span className="col-span-8">Account Details</span>
+                </p>
                 <p
-                    className={`pl-8 py-2 mt-2 text-sm cursor-pointer bg-blue-200`}
-                  onClick={(e)=> selectOption(e)}
+                  className={`pl-8 py-2 mt-2 text-sm cursor-pointer bg-blue-200`}
+                  onClick={(e) => selectOption(e)}
                 >
                   Personal Details
                 </p>
-                <p className={`pl-8 py-2 text-sm cursor-pointer`} onClick={(e)=> selectOption(e)}>
+                <p
+                  className={`pl-8 py-2 text-sm cursor-pointer`}
+                  onClick={(e) => selectOption(e)}
+                >
                   Manage Addresses
                 </p>
-                <p className={`pl-8 py-2 text-sm cursor-pointer`} onClick={(e)=> selectOption(e)}>
+                <p
+                  className={`pl-8 py-2 text-sm cursor-pointer`}
+                  onClick={(e) => selectOption(e)}
+                >
                   My Wishlist
                 </p>
-              </p>
-              <p className="text-xl px-2 pb-2 w-full font-semibold">
-                Payments
+              </div>
+              <div className="text-xl px-2 pb-2 w-full font-semibold">
+              <p className="grid grid-cols-9 items-center gap-8">
+                  <IoMdCard className="text-2xl" /> <span className="col-span-8">Payments</span>
+                </p>
                 <p
                   className={`pl-8 py-2 mt-2 text-sm cursor-pointer`}
-                  onClick={(e)=> selectOption(e)}
+                  onClick={(e) => selectOption(e)}
                 >
                   Wallet
                 </p>
-                <p className={`pl-8 py-2 text-sm cursor-pointer`} onClick={(e)=> selectOption(e)}>
+                <p
+                  className={`pl-8 py-2 text-sm cursor-pointer`}
+                  onClick={(e) => selectOption(e)}
+                >
                   Saved UPI
                 </p>
-                <p className={`pl-8 py-2 text-sm cursor-pointer`} onClick={(e)=> selectOption(e)}>
+                <p
+                  className={`pl-8 py-2 text-sm cursor-pointer`}
+                  onClick={(e) => selectOption(e)}
+                >
                   Saved Cards
                 </p>
-              </p>
-              <p className="text-xl px-2 pb-2 w-full font-semibold">
-                Help Center
+              </div>
+              <div className="text-xl px-2 pb-2 w-full font-semibold">
+                <p className="grid grid-cols-9 items-center gap-8">
+                  <IoMdHelpCircleOutline className="text-2xl" /> <span className="col-span-8">Help Center</span>
+                </p>
                 <p
                   className={`pl-8 py-2 mt-2 text-sm cursor-pointer`}
-                  onClick={(e)=> selectOption(e)}
+                  onClick={(e) => selectOption(e)}
                 >
                   Help With Your Order
                 </p>
-                <p className={`pl-8 py-2 text-sm cursor-pointer`} onClick={(e)=> selectOption(e)}>
+                <p
+                  className={`pl-8 py-2 text-sm cursor-pointer`}
+                  onClick={(e) => selectOption(e)}
+                >
                   Cancelation and refund
                 </p>
-                <p className={`pl-8 py-2 text-sm cursor-pointer`} onClick={(e)=> selectOption(e)}>
+                <p
+                  className={`pl-8 py-2 text-sm cursor-pointer`}
+                  onClick={(e) => selectOption(e)}
+                >
                   Payment issues
                 </p>
-                <p className={`pl-8 py-2 text-sm cursor-pointer`} onClick={(e)=> selectOption(e)}>
+                <p
+                  className={`pl-8 py-2 text-sm cursor-pointer`}
+                  onClick={(e) => selectOption(e)}
+                >
                   Know More About Our Products
                 </p>
-                <p className={`pl-8 py-2 text-sm cursor-pointer`} onClick={(e)=> selectOption(e)}>
+                <p
+                  className={`pl-8 py-2 text-sm cursor-pointer`}
+                  onClick={(e) => selectOption(e)}
+                >
                   Help With Other Issues
                 </p>
-              </p>
+              </div>
             </section>
 
-            <section className="flex flex-col gap-2 items-center shadow-md py-2 bg-blue-dark cursor-pointer hover:bg-red-600 hover:transition-colors">
+            <section className="grid grid-cols-9 items-center gap-8 shadow-md p-2 bg-blue-dark cursor-pointer hover:bg-red-600 hover:transition-colors">
+              <IoMdLogOut className="text-white text-xl" />
               <button
                 onClick={() => logOut()}
-                className="text-xl text-white font-semibold text-opacity-95"
+                className=" text-xl text-white font-semibold text-opacity-95"
               >
                 Logout
               </button>
