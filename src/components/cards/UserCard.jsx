@@ -3,9 +3,12 @@ import {useSelector, useDispatch} from 'react-redux'
 import HomeButton from '../buttons/HomeButton'
 import { LogOut } from '../../store/Reducers/auth/actions'
 import {BiUser,BiMobileAlt,BiEnvelope} from 'react-icons/bi'
+import { useNavigate } from 'react-router-dom'
+import {Modal} from "../../store/Reducers/interactions/actions"
 
 const UserCard = (props) => {
   const dispatch = useDispatch()
+  const Navigate = useNavigate()
   const { user } = useSelector((state) => state.auth);
   const { modal } = useSelector((state) => state.interactions);
   
@@ -19,10 +22,17 @@ const UserCard = (props) => {
       <BiMobileAlt className='col-span-1'/>
        <p className='col-span-5'>{user?.phone}</p>
      </div>
-     <HomeButton text="Logout" style="mt-0 rounded-md text-xl font-semibold"
-     function={()=>{ 
-        dispatch(LogOut())
-     }}/>
+     <span className='flex gap-6'>
+       <HomeButton text="Dashboard" style="mt-0 rounded-md text-xl font-semibold"
+       function={()=>{
+          dispatch(Modal(false))
+          Navigate('/dashboard')
+       }}/>
+       <HomeButton text="Logout" style="mt-0 rounded-md text-xl font-semibold"
+       function={()=>{
+          dispatch(LogOut())
+       }}/>
+     </span>
     </div>
      </>,
      document.getElementById("modal"))
