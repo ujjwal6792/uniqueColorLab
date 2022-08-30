@@ -140,9 +140,12 @@ const Dashboard = () => {
           </div>
 
           <div className="col-span-9 p-4 h-full ">
-            <section className="h-full shadow-md p-8">
+            { user===null ||
+              <section className="h-full shadow-md p-8">
                {selectedOption==="Personal Details" && <PersonalDetails/> } 
             </section>
+            }
+
           </div>
         </div>
       ) : (

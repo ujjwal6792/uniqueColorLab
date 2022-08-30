@@ -7,6 +7,7 @@ import { LoginState } from "../../store/Reducers/auth/actions";
 import TextFieldBase from "../../components/textFields/TextFieldBase";
 import HomeButton from "../../components/buttons/HomeButton";
 import ErrorCard from "../../components/cards/ErrorCard";
+import { Modal } from "../../store/Reducers/interactions/actions";
 
 const Login = () => {
   const {isLoggedIn, error}  = useSelector((state) => state.auth);
@@ -26,6 +27,7 @@ const Login = () => {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
+        dispatch(Modal(false))
         dispatch(LoginState(values))
       }}
     >
@@ -33,7 +35,7 @@ const Login = () => {
         <h1 className="text-5xl text-blue-dark pb-10 md:pd-20"> Login</h1>
         <Form className="flex flex-col gap-4">
           <TextFieldBase
-            style="min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
+            style="mt-4 min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
             placeholder="Email Address"
             type="email"
             name="email"
@@ -41,7 +43,7 @@ const Login = () => {
           />
 
           <TextFieldBase
-            style="min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
+            style="mt-4 min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
             placeholder="Password"
             type="password"
             name="password"

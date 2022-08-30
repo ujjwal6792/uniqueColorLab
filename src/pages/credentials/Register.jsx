@@ -52,21 +52,21 @@ const Register = () => {
             </h1>
             <Form className="flex flex-col gap-4">
               <TextFieldBase
-                style="min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
+                style="mt-4 min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
                 placeholder="First Name"
                 name="firstName"
                 labelstyle="font-semibold -my-2 text-blue-dark"
               />
 
               <TextFieldBase
-                style="min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
+                style="mt-4 min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
                 placeholder="Last Name"
                 name="lastName"
                 labelstyle="font-semibold -my-2 text-blue-dark"
               />
 
               <TextFieldBase
-                style="min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
+                style="mt-4 min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
                 placeholder="Email Address"
                 type="email"
                 name="email"
@@ -74,7 +74,7 @@ const Register = () => {
               />
 
               <TextFieldBase
-                style="min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
+                style="mt-4 min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
                 placeholder="Password"
                 type="password"
                 name="password"
@@ -82,7 +82,7 @@ const Register = () => {
               />
 
               <TextFieldBase
-                style="min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
+                style="mt-4 min-w-[300px] max-w-[400px] w-[40vw] text-blue-dark"
                 placeholder="Confirm Password"
                 type="password"
                 name="confirmPassword"
