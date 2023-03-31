@@ -1,16 +1,17 @@
-import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+// import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 const PasswordReset = () => {
 
     const passwordRecovery = () => {
-        const auth = getAuth();
-    sendPasswordResetEmail(auth, user.email)
-      .then(() => {
+    console.log('to be changed')
+    //     const auth = getAuth();
+    // sendPasswordResetEmail(auth, user.email)
+    //   .then(() => {
     
-      })
-      .catch((error) => {
-        dispatch(Error(error))
-      });
+    //   })
+    //   .catch((error) => {
+    //     dispatch(Error(error))
+    //   });
       }
 
   return (

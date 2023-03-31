@@ -5,15 +5,16 @@ import * as Yup from "yup";
 import TextFieldBase from "../../../components/textFields/TextFieldBase";
 import HomeButton from "../../../components/buttons/HomeButton";
 import ErrorCard from "../../../components/cards/ErrorCard";
-import { db } from "../../../../firebase";
+// import { db } from "../../../../firebase";
 import { Error } from "../../../store/Reducers/auth/actions";
-import { getAuth, updatePassword } from "firebase/auth";
+// import { getAuth, updatePassword } from "firebase/auth";
 
 const PersonalDetails = () => {
   const dispatch = useDispatch()
   const { uid, user, error } = useSelector((state) => state.auth);
   const [edit, setEdit] = useState(false);
   const [editPassword, setEditPassword] = useState(false);
+  
   const validate = Yup.object({
     firstname: Yup.string()
       .max(20, "Must be 20 letters or less")
@@ -36,29 +37,31 @@ const PersonalDetails = () => {
   })
 
   const userDetailsUpdate = (values) => {
-    db.collection("users")
-      .doc(uid)
-      .update({
-        firstname: values?.firstname || "",
-        surname: values?.surname || "",
-        email: values?.email || "",
-        phone: values?.phone || "",
-        uid: uid,
-      })
-      .then(setEdit(false))
-      .catch((values) => dispatch(Error(values)));
+    console.log('to be changed')
+    // db.collection("users")
+    //   .doc(uid)
+    //   .update({
+    //     firstname: values?.firstname || "",
+    //     surname: values?.surname || "",
+    //     email: values?.email || "",
+    //     phone: values?.phone || "",
+    //     uid: uid,
+    //   })
+    //   .then(setEdit(false))
+    //   .catch((values) => dispatch(Error(values)));
   };
 
   const ChangePassword = (values)=> {
-    const auth = getAuth()
-    const user1 = auth.currentUser;
-    updatePassword(user1, values).then(() => {
-      console.log("password Changed Sucessfully")
-    }).catch((error) => {
-      dispatch(Error(error))
-      console.log(error)
+    console.log('to be changed')
+    // const auth = getAuth()
+    // const user1 = auth.currentUser;
+    // updatePassword(user1, values).then(() => {
+    //   console.log("password Changed Sucessfully")
+    // }).catch((error) => {
+    //   dispatch(Error(error))
+    //   console.log(error)
       
-    });
+    // });
   }
 
 
