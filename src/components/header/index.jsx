@@ -88,7 +88,7 @@ const Header = () => {
             onClick={() => headerMenu("/packages")}
             className={styles.menuButtons}
           >
-            package
+            products
           </li>
           <li
             onClick={() => headerMenu("/contact")}
@@ -104,7 +104,7 @@ const Header = () => {
           </li>
         </ul>
         {/* user section */}
-        <div className="flex gap-4 flex-col md:flex-row items-center">
+        {/* <div className="flex gap-4 flex-col md:flex-row items-center">
           <img
             onClick={() => isLoggedIn?modalToggle(): headerMenu("/login")}
             className="cursor-pointer rounded-full h-14 w-14 md:h-12 md:w-12 border-2 border-black"
@@ -122,9 +122,9 @@ const Header = () => {
           >
             <MdOutlineShoppingCart /> {`${0}`}
           </span>
-        </div>
+        </div> */}
       </div>
-     {isLoggedIn && <UserCard style="absolute top-20 right-16 p-8 rounded-md w-[320px]"/>}
+     {/* {isLoggedIn && <UserCard style="absolute top-20 right-16 p-8 rounded-md w-[320px]"/>} */}
     </div>
   );
 };
